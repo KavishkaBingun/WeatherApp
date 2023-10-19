@@ -12,7 +12,7 @@ const Login = () => {
   const handleLogin = () => {
     if (username === 'userlogin' && password === 'user1234') {
       setUser({ username });
-      localStorage.setItem('user', JSON.stringify({ username }));
+      localStorage.setItem('userlogin', JSON.stringify({ username }));
       navigate('/home');
     }
   };
