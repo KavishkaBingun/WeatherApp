@@ -1,25 +1,54 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route as RouteV6, Link, useLocation, useNavigate } from 'react-router-dom';
+import AuthProvider, { useAuth } from './components/AuthProvider';
+import Login from './components/Login';
+import Home from './components/Home';
 
-function App() {
+const Header = () => {
+  const { user, logout } = useAuth();
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate('/login');
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <nav>
+      <ul>
+        {user ? (
+          <>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <button className='logout' onClick={handleLogout}>Logout</button>
+            </li>
+          </>
+        ) : (
+          <li>
+            <Link to="/login">Login</Link>
+          </li>
+        )}
+      </ul>
+    </nav>
   );
-}
+};
+
+const App = () => {
+  return (
+    <Router>
+      <AuthProvider>
+        <Header />
+        <Routes>
+          <RouteV6 path="/login" element={<Login />} />
+          <RouteV6 path="/" element={<Home />} />
+        </Routes>
+      </AuthProvider>
+    </Router>
+  );
+};
 
 export default App;

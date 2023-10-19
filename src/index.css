@@ -1,13 +1,235 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  padding: 0;
+}
+body {
+  
+  font-family: 'outfit', 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+p{
+  font-size: 1.6rem;
+}
+
+h1{
+  font-size: 6rem;
+}
+
+.App{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #fff;
+}
+
+.App:before {
+  content: '';
+  background: url('./assets/background.jpg') no-repeat center center/cover;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.container{
+  max-width: 700px;
+  height: 600px;
+  padding: 0 1rem;
+  position: relative;
+  top: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.App .top{
+  width: 100%;
+  margin: 1rem auto;
+  margin-left: 14rem;
+  
+}
+
+.App .top p{
+  margin-left: 3rem;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.App .bottom {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  margin:  auto;
+  padding: 1rem;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.App .bottom .feels,
+.App .bottom .humidity,
+.App .bottom .wind {
+  margin-right: 4rem; /* Add margin to create space between items */
+  margin-left: 2rem;
+}
+
+.App .search{
+  text-align: center;
+  padding: 1rem;
+}
+
+.App input{
+  padding: 0.7rem 1.5rem;
+  font-size: 1.2rem;
+  border-radius: 25rem;
+  border: 1px solid rgba(255,255,255,0.8);
+  background: rgba(255, 255, 255, 0.1);
+  color: #f8f8f8;
+}
+
+::placeholder{
+  color: #f8f8f8;
+}
+
+.bold{
+  font-weight: bold;
+}
+
+
+nav {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav li {
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.logout{
+  background-color: #333;
+  color: white;
+  padding: 10px;
+}
+
+.logout:hover{
+  text-decoration: underline;
+}
+
+/* Login.css */
+.login-container {
+  width: 600px;
+  height: 500px;
+  margin: 0 auto;
+  margin-top: 300px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  text-align: center;
+  border-radius: 5rem;
+  
+}
+
+.login-background{
+  background: url('./assets/background.jpg') no-repeat center center/cover;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.input-container {
+  margin: 10px 0;
+}
+
+
+
+input[type="text"],
+input[type="password"] {
+  width: 80%;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 25rem;
+ 
+}
+
+.login-button {
+  background-color: #333;
+  color: white;
+  margin-top: 50px;
+  padding: 10px 20px;
+  font-size: 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-button:hover {
+  background-color: #9d9d9d;
+}
+
+.login-background h1{
+  color:#333;
+  font-weight: normal;
+  margin-bottom: 50px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.login-background ::placeholder{
+  color: #898686;
+  font-size: 20px;
+}
+
+/* styles.css (or your preferred CSS file) */
+.view-more-button {
+  background-color: rgba(255, 255, 255, 0.6); /* Set your desired background color */
+  color: rgba(19, 19, 19); /* Set your desired text color */
+  border: none;
+  padding: 10px 20px;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem auto;
+  margin-left: 16rem;
+}
+
+.view-more-button:hover {
+  background-color: #686869; /* Change the background color on hover */
 }
