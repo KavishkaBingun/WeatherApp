@@ -13,7 +13,7 @@ const Login = () => {
     if (username === 'user' && password === 'password') {
       setUser({ username });
       localStorage.setItem('user', JSON.stringify({ username }));
-      navigate('/');
+      navigate('/home');
     }
   };
 

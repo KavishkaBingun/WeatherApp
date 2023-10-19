@@ -89,7 +89,7 @@ const Home = () => {
         </div>
       ) : (
         <div>
-          <h1>Welcome to the Home page</h1>
+          
           <p>You are not logged in.</p>
         </div>
       )}

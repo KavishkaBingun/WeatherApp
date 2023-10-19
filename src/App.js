@@ -12,7 +12,7 @@ const Header = () => {
 
   const handleLogout = () => {
     logout();
-    navigate('/login');
+    navigate('/');
   };
 
   return (
@@ -21,7 +21,7 @@ const Header = () => {
         {user ? (
           <>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/home">Home</Link>
             </li>
             <li>
               <button className='logout' onClick={handleLogout}>Logout</button>
@@ -29,7 +29,7 @@ const Header = () => {
           </>
         ) : (
           <li>
-            <Link to="/login">Login</Link>
+            <Link to="/">Login</Link>
           </li>
         )}
       </ul>
@@ -43,8 +43,8 @@ const App = () => {
       <AuthProvider>
         <Header />
         <Routes>
-          <RouteV6 path="/login" element={<Login />} />
-          <RouteV6 path="/" element={<Home />} />
+          <RouteV6 path="/" element={<Login />} />
+          <RouteV6 path="/home" element={<Home />} />
         </Routes>
       </AuthProvider>
     </Router>
