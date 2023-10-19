@@ -22,6 +22,12 @@ h1{
   font-size: 6rem;
 }
 
+@media screen and (min-width:700px) { 
+  div.post{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 .App{
   display: flex;
   flex-direction: column;
