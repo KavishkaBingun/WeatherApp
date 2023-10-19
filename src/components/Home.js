@@ -85,7 +85,7 @@ const Home = () => {
        
        </div>
     </div>
-          <button onClick={logout}>Logout</button>
+         
         </div>
       ) : (
         <div>
