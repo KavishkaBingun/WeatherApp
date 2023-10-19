@@ -10,7 +10,7 @@ const Login = () => {
   const [password, setPassword] = useState('');
 
   const handleLogin = () => {
-    if (username === 'user' && password === 'password') {
+    if (username === 'userlogin' && password === 'user1234') {
       setUser({ username });
       localStorage.setItem('user', JSON.stringify({ username }));
       navigate('/home');
